@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+ # tasks = Task.create(name: "Finish rails project", description:"Making the CRUD in rails", deadline: "Today")
+
+
+Task.destroy_all
+
+deadline = %w(today tommorrow monday friday sunday)
+
+10.times do
+  task = Task.new(name: Faker:: App.name, description: Faker::Book.genre, deadline: deadline.sample)
+
+  puts "#{task.name} saved!" if task.save
+end

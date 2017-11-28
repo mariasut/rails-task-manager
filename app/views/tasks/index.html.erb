@@ -1,0 +1,18 @@
+<h1>Here are all my tasks</h1>
+
+
+<% @tasks.each do |task|  %>
+  <h2>
+    <%= task.id %>
+    <%= link_to task.name, task_path(task) %>
+  </h2>
+  <p><%= task.description %></p>
+  <p><%= task.deadline %></p>
+  <%= link_to "Edit task", edit_path(task)%>
+<% end %>
+
+<%= link_to "New task", tasks_new_path %>
+<%= link_to "Delete task", tasks_path %>
+
+
+
